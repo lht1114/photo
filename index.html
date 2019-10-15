@@ -57,6 +57,26 @@
         <img :src="img[17].img" alt="">
         <img :src="img[18].img" alt="">
         <img :src="img[19].img" alt="">
+        <img :src="lis[0].img" alt="">
+        <img :src="lis[1].img" alt="">
+        <img :src="lis[2].img" alt="">
+        <img :src="lis[3].img" alt="">
+        <img :src="lis[4].img" alt="">
+        <img :src="lis[5].img" alt="">
+        <img :src="lis[6].img" alt="">
+        <img :src="lis[7].img" alt="">
+        <img :src="lis[8].img" alt="">
+        <img :src="lis[9].img" alt="">
+        <img :src="lis[10].img" alt="">
+        <img :src="lis[11].img" alt="">
+        <img :src="lis[12].img" alt="">
+        <img :src="lis[13].img" alt="">
+        <img :src="lis[14].img" alt="">
+        <img :src="lis[15].img" alt="">
+        <img :src="lis[16].img" alt="">
+        <img :src="lis[17].img" alt="">
+        <img :src="lis[18].img" alt="">
+        <img :src="lis[19].img" alt="">
     </div>
     <script>
         window.onload = function () {
@@ -64,11 +84,13 @@
                 el: '#app',
                 data() {
                     return {
-                        img:''
+                        img:'',
+                        lis:''
                     }
                 },
                 mounted() {
                     this.get();
+                    this.list();
                 },
                 methods: {
                     get: function () {
@@ -76,6 +98,15 @@
                         this.$http.post('https://api.apiopen.top/getImages').then(function (res) {
                             //console.log(res.body.result);
                             this.img = res.body.result;
+                        }, function () {
+                            console.log('请求失败');
+                        })
+                    },
+                    list: function () {
+                        var lis;
+                        this.$http.post('https://api.apiopen.top/getImages').then(function (res) {
+                            //console.log(res.body.result);
+                            this.lis = res.body.result;
                         }, function () {
                             console.log('请求失败');
                         })
