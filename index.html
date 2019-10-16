@@ -99,7 +99,7 @@
                     get: function () {
                         var img;
                         this.$http.post('https://api.apiopen.top/getImages').then(function (res) {
-                            console.log(res);
+                            //console.log(res);
                             this.img = res.body.result;
                         }, function () {
                             console.log('请求失败');
